@@ -1,5 +1,5 @@
 import './App.css'
-import Signup from './component/pages/Sign-up-page'
+import {Signup} from './component'
 
 function App() {
 
