@@ -1,12 +1,12 @@
-export const data = {
+export var data = {
     user: {
-        firstName: 'rik',
-        lastName: 'shi',
-        email: 'rik@gmail.com',
-        dob: '2002/20/20',
-        contnum: '1236547890',
-        password: 'md5hasing',
-    }
+        firstName: 'name',
+        lastName: 'cast',
+        email: 'email@gmail.com',
+        dob: '2000/02/02',
+        contnum: '9876543210',
+        password: 'password',
+    },
 
     records: [
         {

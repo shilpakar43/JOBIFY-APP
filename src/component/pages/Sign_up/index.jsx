@@ -1,46 +1,43 @@
 import React, { useState } from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
-import './signup.css';
-// import { useNavigate } from 'react-router-dom';
+import './signup.css'
+import { data } from '../../Services/data/data'
+import { useNavigate } from 'react-router';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        dob: '',
-        contnum: '',
-        password: '',
-        confirmpassword: '', // fixed spelling
+        data
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        if (formData.password !== formData.confirmpassword) {
-            alert('Passwords do not match!');
-            return;
+        const formData = {
+            firstName: event.target.firstName.value,
+            lastName: event.target.lastName.value,
+            email: event.target.email.value,
+            password: event.target.password.value,
+            confirmpassword: event.target.confirmpassword.value
         }
 
-        // Simulate saving data
-        const data = { user: formData };
-        console.log('Form Data:', data.user);
-        alert('Sign up successful!');
+        if (formData.password === formData.confirmpassword) {
+            data.user = formData;
+            console.log(data.user)
+            alert("Signed Up Successfully")
+        } else {
+            alert("Password Does not Match!!")
+        }
+
+
     };
+
+    const navigate = useNavigate();
 
     return (
         <div>
             <Container className="signuf">
                 <div className="formcon bg-white rounded-xl p-4 w-full max-w-md mx-auto">
-                    <form onSubmit={handleSubmit} className="formt">
+                    <form onSubmit={handleSubmit}>
                         <Row className="sheader d-flex justify-content-center">
                             <Row className="text-center">
                                 <Row>
@@ -52,31 +49,27 @@ const Signup = () => {
                             </Row>
                             <div className="formf">
                                 <Row className="textbox">
-                                    <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
+                                    <input type="text" name="firstName" placeholder="First Name" defaultValue={formData.firstName} required />
                                 </Row>
 
                                 <Row className="textbox">
-                                    <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
+                                    <input type="text" name="lastName" placeholder="Last Name" defaultValue={formData.lastName} required />
                                 </Row>
 
                                 <Row className="textbox">
-                                    <input type="email" name="email" placeholder="E-Mail" value={formData.email} onChange={handleChange} required />
+                                    <input type="email" name="email" placeholder="E-Mail" defaultValue={formData.email} required />
                                 </Row>
 
                                 <Row className="textbox w-100">
-                                    <input type="date" name="dob" value={formData.dob} onChange={handleChange} required />
+                                    <input type="text" name="contnum" placeholder="Contact Number" defaultValue={formData.contnum} required />
                                 </Row>
 
                                 <Row className="textbox w-100">
-                                    <input type="text" name="contnum" placeholder="Contact Number" value={formData.contnum} onChange={handleChange} required />
+                                    <input type="password" name="password" placeholder="Password" defaultValue={formData.password} required />
                                 </Row>
 
                                 <Row className="textbox w-100">
-                                    <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
-                                </Row>
-
-                                <Row className="textbox w-100">
-                                    <input type="password" name="confirmpassword" placeholder="Confirm Password" value={formData.confirmpassword} onChange={handleChange} required />
+                                    <input type="password" name="confirmpassword" placeholder="Confirm Password" defaultValue={formData.confirmpassword} required />
                                 </Row>
 
                                 <Row className="textbox w-100">
@@ -90,7 +83,7 @@ const Signup = () => {
                                         Already have an account?
                                         {/* <a href="/">Login</a> */}
 
-                                        <Button variant="link" onClick={() => navigate('/login')}>
+                                        <Button variant="link" onClick={() => navigate('/Login')}>
                                             Login
                                         </Button>
                                     </p>
