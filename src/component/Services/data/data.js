@@ -1,22 +1,11 @@
 export var data = {
     user: {
-        firstName: 'name',
-        lastName: 'cast',
-        email: 'email@gmail.com',
-        dob: '2000/02/02',
+        firstName: 'rik ',
+        lastName: 'shi',
+        email: 'rikeshshilpakar66@gmail.com',
         contnum: '9876543210',
-        password: 'password',
+        password: 'AAAaaa111///',
+        confirmpassword: 'AAAaaa111///'
     },
-
-    records: [
-        {
-            firstName: "",
-            lastName: "",
-            email: "",
-            dob: "",
-            contnum: "",
-            password: "",
-        }
-    ]
-
+    otp: ''
 }
