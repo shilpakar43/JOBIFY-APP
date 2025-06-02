@@ -3,7 +3,7 @@ import './login.css'
 import { useNavigate } from 'react-router';
 import { data } from '../../Services/data/data';
 import { Formik, Field, Form } from 'formik';
-import recoveracc from './Forgot_password';
+import recoveracc from './Forgot_password/Recoveracc';
 
 const Login = () => {
 
@@ -12,16 +12,15 @@ const Login = () => {
     const handleSubmit = (values) => {
 
         if (values.email === data.user.email && values.password === data.user.password) {
-            // alert("Login Successfully");
+            alert("Login Successfully");
             console.log("Login Successfully")
         }
 
         else {
-            // alert("Invalid credentials");
+            alert("Invalid credentials");
             console.log("invalid credentials")
-
         }
-        // navigate('/Signup');
+        // navigate('/dashboard');
     };
 
     return (
@@ -33,7 +32,7 @@ const Login = () => {
                         onSubmit={handleSubmit}
                     >
 
-                        <Form  className='formt'>
+                        <Form className='formt'>
                             <Row className='sheader justify-content-center text-center '>
                                 <Col className='ms-5'>
                                     <h1 className='mb-3'>Login</h1>

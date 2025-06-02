@@ -12,6 +12,8 @@
   "dependencies": {
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
+    "formik": "^2.4.6",
+    "otp-generator": "^4.0.1",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
