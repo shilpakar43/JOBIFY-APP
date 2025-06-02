@@ -1,10 +1,7 @@
-import React from 'react'
-import { Button, Row, } from 'react-bootstrap'
+import { Button, Row} from 'react-bootstrap'
 import { Formik, Form, Field } from 'formik';
-import Recoveracc from '../Recoveracc/index'
 import { data } from '../../../../Services/data/data'
 import { useNavigate } from 'react-router'
-import CnPass from '../create_new_password';
 import './verify.css';
 
 const VerifyOtp = () => {
@@ -19,7 +16,6 @@ const VerifyOtp = () => {
 
             alert('OTP is valid')
 
-            // console.log('OTP is valid');
             navigate('/CnPass')
         } else {
             alert("Invalid OTP");
@@ -36,7 +32,7 @@ const VerifyOtp = () => {
 
                 <Form className='formf'>
                     <Row>
-                        <Button variant="link" onClick={() => navigate('/Recoveracc')} className='back'> {'<'} </Button>
+                        <Button variant="link" onClick={() => navigate('/Recoveracc')} className='back'> {"<"} </Button>
                     </Row>
 
                     <h4>Enter your OTP</h4>

@@ -10,7 +10,6 @@ const Signup = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (values) => {
-        // console.log(values)
         data.user.email = values.email;
         data.user.password = values.password;
         data.user.firstName = values.firstName;
@@ -18,9 +17,9 @@ const Signup = () => {
         data.user.contnum = values.contnum;
         console.log(data.user);
 
-        // alert('signed up successfully');
-        console.log("signup successfull")
-        // navigate('/Login')
+        alert('signed up successfully');
+
+        navigate('/Login')
     }
 
     const validate = (values) => {
